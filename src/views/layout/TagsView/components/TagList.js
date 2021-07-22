@@ -115,20 +115,9 @@ class TagList extends Component {
         const currentPath = history.location.pathname;
         return (
             <div>
-                <Scrollbars
-                    autoHide
-                    autoHideTimeout={1000}
-                    autoHideDuration={200}
-                    hideTracksWhenNotNeeded={true}
-                    renderView={(props) => (
-                        <div {...props} className="scrollbar-container"/>
-                    )}
-                    renderTrackVertical={(props) => (
-                        <div {...props} className="scrollbar-track-vertical"/>
-                    )}
-                >
-                    <ul className="tags-wrap" ref={this.tagListContainer}>
-                        {taglist.map((tag) => (
+                <ul className="tags-wrap" ref={this.tagListContainer}>
+                    {taglist.map((tag) => {
+                        return (
                             <li key={tag.path}>
                                 <Tag
                                     onClose={this.handleClose.bind(null, tag)}
@@ -140,9 +129,9 @@ class TagList extends Component {
                                     {tag.title}
                                 </Tag>
                             </li>
-                        ))}
-                    </ul>
-                </Scrollbars>
+                        )
+                    })}
+                </ul>
                 {menuVisible ? (
                     <ul
                         className="contextmenu"
@@ -159,7 +148,6 @@ class TagList extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return state.tag
 }
 
