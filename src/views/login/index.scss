@@ -1,0 +1,27 @@
+.login-wrapper {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: gray;
+
+  .login-container {
+    height: 320px;
+    width: 320px;
+    background-color: white;
+    padding: 30px;
+    box-sizing: content-box;
+
+    h2 {
+      text-align: center;
+      color: #000;
+    }
+
+    .content {
+      text-align: center;
+
+
+    }
+  }
+}
